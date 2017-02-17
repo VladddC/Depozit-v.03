@@ -29,7 +29,7 @@ public class Client{
     public static void main(String[] args) {
       
         ip = JOptionPane.showInputDialog("Server Address : ");
-        nume = JOptionPane.showInputDialog("Login : ");
+        //nume = JOptionPane.showInputDialog("Login : ");
         
         try{
           
