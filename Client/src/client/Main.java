@@ -24,14 +24,17 @@ public class Main {
           //citire din consola
           BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
           
+          String line; 
+          
           while(true){
               System.out.print("Client : ");
-              String line = consola.readLine();
               
-              out.print(line);
+              line = consola.readLine();
+              
+              out.println(line);
               
               line = in.readLine();
-              System.out.print("Server : " + line);
+              System.out.print("Server : " + line + "\n");
               
               if (line.equalsIgnoreCase("end")){
                   break;
