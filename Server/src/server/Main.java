@@ -5,17 +5,40 @@
  */
 package server;
 
-/**
- *
- * @author Freeware Sys
- */
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        try{
+            ServerSocket ss = new ServerSocket(4321);
+            Socket socket = ss.accept();
+            
+            PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            
+            while(true){
+                String line = in.readLine();
+                
+                //citeste intrarea si reverseaza
+                
+                StringBuffer sb = new StringBuffer(line);
+                
+                sb.reverse();
+                
+                line = sb.toString();
+                out.println(line);
+            
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     
 }
