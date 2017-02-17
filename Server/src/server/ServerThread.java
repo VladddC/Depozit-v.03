@@ -12,6 +12,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -70,6 +72,7 @@ public class ServerThread extends Thread {
         }
         else{
             System.out.println("Ce faci wa?!");
+            JOptionPane.showMessageDialog(null,"Utilizator inexistent!","Error.",JOptionPane.ERROR_MESSAGE);
         }
             
         
