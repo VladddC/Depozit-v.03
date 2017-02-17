@@ -49,7 +49,7 @@ public class ServerThread extends Thread {
     public void sendMessage(String message){
            StringBuffer sb = new StringBuffer(message);
            sb.reverse();
-           out.print(sb);
+           out.println(sb.toString());
     }
        
 }
