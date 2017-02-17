@@ -17,14 +17,18 @@ public class Main {
 
     public static void main(String[] args) {
         try{
+            
             ServerSocket ss = new ServerSocket(4321);
             Socket socket = ss.accept();
             
             PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             
+            String line;
+            
             while(true){
-                String line = in.readLine();
+                
+                line = in.readLine();
                 
                 //citeste intrarea si reverseaza
                 
@@ -33,6 +37,7 @@ public class Main {
                 sb.reverse();
                 
                 line = sb.toString();
+                
                 out.println(line);
             
             }
